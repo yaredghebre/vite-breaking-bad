@@ -18,23 +18,23 @@ export default {
     }
   },
   mounted() {
-    this.store.loading = true;
-    axios.get(store.apiURL).then((resp) => {
-      console.log(resp.data.data);
-      this.store.cards = resp.data.data;
-      this.store.loading = false;
-    })
+    this.getCards();
   },
   methods: {
-    handleFilter() {
-      axios.get(store.apiURL, {
-        params: {
-          archetype: this.store.selectedOption
-        }
-      }).then((resp) => {
-        console.log(resp.data.data);
+    getCards() {
+      // this.store.loading = true;
+      const params = {};
+      if(this.store.selectedOption) {
+        params.archetype = this.store.selectedOption;
+      }
+      axios.get(this.store.apiURL, {
+        params
+      }).then(resp => {
         this.store.cards = resp.data.data;
       })
+    },
+    handleFilter() {
+      this.getCards();
     }
   }
 }
