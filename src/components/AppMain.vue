@@ -21,14 +21,14 @@ export default {
 <template>
     <main>
         <AppLoader v-if="store.loading" />
-        <div v-else class="container d-flex align-items-center p-5">
+        <!-- <div class="container d-flex align-items-center p-5">
             <select name="" id="">
                 <option value="">Alien</option>
                 <option value="">Archfiend</option>
                 <option value="">Melodious</option>
                 <option value="">Noble Knight</option>
             </select>
-        </div>
+        </div> -->
 
         <div class="container white p-5">
             <div class="container-title d-flex align-items-center">

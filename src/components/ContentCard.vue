@@ -3,7 +3,12 @@ export default {
     name: "ContentCard",
     props: {
         card: Object
-    }
+    },
+    // computed: {
+    //     imageurl() {
+    //         return this.card.card_images[0].image_url_small;
+    //     }
+    // }
 }
 </script>
 
